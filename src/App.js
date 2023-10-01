@@ -13,7 +13,7 @@ function App() {
   return (
     
     <div className='bg-site    bg-repeat bg-cover  overflow-hidden bg-blend-color  '>
-      {/* <div className='backdrop-blur-lg'> */}
+      
       <Header />
       <Banner />
       <Nav />
@@ -21,8 +21,7 @@ function App() {
       <Services />
       <Work />
       <Contact />
-      {/* <div className='h-[4000px] '></div> */}
-{/* </div> */}
+      <div className='h-[200px] '></div> 
       
     </div>
   );
