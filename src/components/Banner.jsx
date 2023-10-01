@@ -78,9 +78,9 @@ const Banner = () => {
             
             className='rounded-full 
       bg-gradient-to-r from-cyan-500 from-10% via-sky-500 via-30% to-cyan-900 to-90%
-      hidden lg:flex flex-1 max-w-[320px] max-h-[320px] lg:max-w-[450px] max-h-[460px] mx-auto
+      hidden lg:flex flex-1 max-w-[320px] mix-blend-lighten max-h-[320px] lg:max-w-[450px] max-h-[460px] mx-auto
       '>
-        <img src={me} alt="my photo" />
+        <img src={me} alt="my photo"  />
       </motion.div>
 </div>
       </div>

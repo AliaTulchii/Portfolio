@@ -27,7 +27,7 @@ module.exports = {
         siteup: "url('./assets/bgup.png')",
         site: "url('./assets/blur.jpg')",
         about: "url('./assets/rem.png')",
-        services: "url('')",
+        services: "url('./assets/me.png')",
       },
       // backdropBlur: {
       //   xs: '32px',
