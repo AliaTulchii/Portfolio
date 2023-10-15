@@ -7,12 +7,13 @@ import { FaCss3Alt, FaReact } from 'react-icons/fa'
 import {BiLogoJavascript, BiLogoRedux, BiLogoTailwindCss, BiChip} from 'react-icons/bi'
 import { FiGitCommit} from 'react-icons/fi'
 import './Services.css'
+import { Link } from 'react-scroll'
 
 
 
 const Services = () => {
   return (
-    <div className="section relative" id="services">
+    <div className=" relative lg:p-40" id="services">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-baseline gap-16">
           <motion.div
@@ -54,7 +55,7 @@ const Services = () => {
   </div>
 </div>
 </div>
-<button className="btn btn-sm">See my work</button>
+<Link to='work' className="btn btn-sm py-3 cursor-pointer">See my work</Link>
 </div>
             </motion.div>
            

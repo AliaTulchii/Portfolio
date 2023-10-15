@@ -8,7 +8,7 @@ import img3 from '../assets/img4.png'
 
 const Work = () => {
   return (
-    <div className='section' id='work'>
+    <section className='section' id='work'>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row gap-x-10'>
           <motion.div
@@ -16,15 +16,17 @@ const Work = () => {
             initial='hidden'
               whileInView={'show'}
               viewport={{once: false, amount: 0.3}}
-            className='flex-1 flex-col gap-y-12 mb-10 '>
-            <div className='mb-[60px]'>
+            className='flex-1 flex flex-col gap-y-12  mb-10 lg:mb-0 '>
+            <div>
               <h2 className='h2 leading-tight text-accent'>My Latest <br /> Work</h2>
               <p className='max-w-sm mb-16'>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Cupiditate nobis, quas laudantium ipsam reiciendis ut.</p>
-           <a href='https://github.com/AliaTulchii?tab=repositories' target='blank' className='btn py-2 px-6 text-sm '>View all projects</a>
+              <a href='https://github.com/AliaTulchii?tab=repositories'
+                target='blank'
+                className='btn py-2 px-6 text-sm '>View all projects</a>
             </div>
 
-            <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
+            <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl '>
               <a href="https://aliatulchii.github.io/daily-goals-tracking-app/" target='blank'>
               <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
               <img className='group-hover:scale-125 transition-all duration-500' src={img1} alt="project" />
@@ -43,7 +45,7 @@ const Work = () => {
             initial='hidden'
               whileInView={'show'}
               viewport={{once: false, amount: 0.3}}
-            className='flex-1 flex flex-col gap-y-12 lg:gap-y-[68px]'>
+            className='flex-1 flex flex-col gap-y-10 lg:gap-y-14'>
 
           <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
               <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
@@ -70,7 +72,7 @@ const Work = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

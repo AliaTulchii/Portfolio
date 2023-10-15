@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://AliaTulchii.github.io/portfolio",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

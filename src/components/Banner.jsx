@@ -4,6 +4,7 @@ import {FaGithub, FaLinkedinIn, FaTelegram} from 'react-icons/fa'
 import {TypeAnimation} from 'react-type-animation'
 import { motion } from 'framer-motion'
 import {fadeIn} from '../variants'
+import { Link } from 'react-scroll'
 
 const Banner = () => {
   return (
@@ -53,19 +54,19 @@ const Banner = () => {
               viewport={{once: false, amount: 0.7}}
               className='flex max-w-max  flex-col gap-x-6  mb-12 mx-auto lg:mx-0'>
               <div className='flex max-w-max  gap-x-6 items-center mb-12 '>
-              <button className='btn btn-lg'>Contact me</button>
-              <a href="#" className='text-gradient btn-link'>My Portfolio</a>
+              <Link to='contact' className='btn btn-sm py-3 cursor-pointer'>Contact me</Link>
+              <a href="ResumeHalynaTulchii.pdf" download="CVHalynaTulchii" className='text-gradient btn-link'>My Portfolio</a>
               </div>
               
               <div className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
-                <a href="https://github.com/AliaTulchii" target='blank'>
-                  <FaGithub/>
+                <a href="https://github.com/AliaTulchii"  target='blank'>
+                  <FaGithub class="rounded-full hover:bg-cyan-300"/>
                 </a>
                 <a href="https://www.linkedin.com/in/halyna-tulchii-869569271/" target='blank'>
-                  <FaLinkedinIn/>
+                  <FaLinkedinIn class="rounded-sm hover:bg-cyan-300"/>
                 </a>
                 <a href="https://t.me/alia_tulchii" target='blank'>
-                  <FaTelegram/>
+                  <FaTelegram class="rounded-full hover:bg-cyan-300"/>
                 </a>
              </div>
             </motion.div>
