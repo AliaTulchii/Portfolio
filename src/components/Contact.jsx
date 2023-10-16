@@ -1,11 +1,52 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
 import emailjs from '@emailjs/browser'
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
+
+
+const useInput = (initialValue) => {
+  const [value, setValue] = useState(initialValue)
+  const [isDirty, setDirty] = useState(false)
+
+  const onChange = (e) => {
+    setValue(e.target.value)
+  }
+
+  const onBlur = (e) => {
+    setDirty(true)
+  }
+
+  return {
+    value,
+    onChange,
+    onBlur
+  }
+}
 const Contact = () => {
   const refForm = useRef()
+  const email = useInput('')
+  const name = useInput('')
+  const notifySucces = (text) => {
+
+    toast.success(text, {
+      position: toast.POSITION.TOP_RIGHT
+    });
+
+
+  }
+
+  const notifyError = (text) => {
+
+    toast.error(text, {
+      position: toast.POSITION.TOP_RIGHT
+    });
+
+
+  }
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -16,14 +57,16 @@ const Contact = () => {
       refForm.current,
       '9BJAiDG_HDnJjPZiv'
     ).then(() => {
-      alert('Message successfully sent!')
-      window.location.reload(false)
+      notifySucces('Message successfully sent!')
     },
       () => { 
-        alert('Failed to send the email, please try again!')
+        notifyError('Failed to send the email, please try again!')
       }
     )
   }
+
+
+  
 
   return (
     <section className=' py-12 lg:section' id='contact'>
@@ -56,7 +99,7 @@ const Contact = () => {
               viewport={{once: false, amount: 0.3}}
             className='flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start'>
             <input
-              className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all '
+              className='placeholder:bg-transparent bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all '
               type="text"
               placeholder='Your name'
               name='from_name'
@@ -67,13 +110,17 @@ const Contact = () => {
               type="text"
               placeholder='Your email'
               name='from_email'
+              value={email.value}
+              onChange={e => email.onChange(e)}
+              onBlur={e => email.onBlur(e)}
             />
             <textarea
               className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all  resize-none mb-12'
               placeholder='Your message'
               name="message"
             ></textarea>
-            <button className='btn btn-lg'>Send message</button>
+            <button className='btn btn-lg' onClick={sendEmail ? notifySucces : notifyError}>Send message</button>
+            <ToastContainer theme="dark" />
           </motion.form>
 
         </div>
