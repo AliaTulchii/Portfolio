@@ -13,7 +13,7 @@
   border-radius: 30px;
   padding: 14px 28px;
   cursor: pointer;
-  background: linear-gradient(to bottom, #017b93, #b7eefc);
+  background: linear-gradient(to bottom, #017b93, #b7eefc, #aab3f4);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   animation: button-shimmer 2s infinite;
   transition: all 0.3s ease-in-out;
@@ -49,14 +49,16 @@
 .gradient,
 .active {
   background: linear-gradient(
-    270deg,
-     /* #8ff9ff 0%,
-      #1ed7eb 45%,
-       #00bad6 100% */
+    150deg,
+     #fff 0%,
+      #7261e2 45%,
+       #00ddeb 100%
 
-       #b7eefc 0%,
+       /* #b7eefc 0%,
        #43bfd8 45%,
-       #25a7b8 100%
+       #25a7b8 100% */
+
+       /* linear-gradient(144deg,_#e5c6fc,_#5b42f3,_#00ddeb) */
        );
 
        
@@ -100,7 +102,11 @@
     }
 
     .text-gradient {
-      @apply bg-gradient-to-r text-transparent bg-clip-text from-[#017b93] to-[#b7eefc] font-bold font-primary ;
+      @apply bg-gradient-to-r text-transparent bg-clip-text from-[#00ddeb] to-[#5b42f3] font-bold font-primary ;
+    }
+
+    .text-gradient-hover{
+      @apply bg-gradient-to-r text-transparent bg-clip-text from-[#5b42f3] to-[#00ddeb] font-bold font-primary ;
     }
 
     .section {
