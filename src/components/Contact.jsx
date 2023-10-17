@@ -4,15 +4,37 @@ import { fadeIn } from '../variants'
 import emailjs from '@emailjs/browser'
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-
+import { useFormik } from 'formik';
+import * as Yup from 'yup'
 
 const Contact = () => {
   const refForm = useRef()
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+   
 
+  const formik = useFormik({
+    initialValues: {
+      from_name: '',
+      from_email: '',
+    },
+    
+    validationSchema: Yup.object({
+      from_name: Yup.string()
+        .min(3, 'To short name')
+        .max(16, 'Username should be not more than 16 characters and should not include any special character!')
+        .required('Name is required'),
+      from_email: Yup.string()
+        .email('It should be a valid email address!')
+        .required('Email is required'),
+    }),
+
+
+    onSubmit: (values) => {
+      console.log(values)
+    }
+  })
   
-
+  console.log(formik.errors)
+ 
   
 
   const notifySucces = (text) => {
@@ -51,19 +73,10 @@ const Contact = () => {
       }
     )
 
-    
-
+    formik.handleSubmit()
   }
 
-  const onChangeName = (e) => { 
-    setName(e.target.value);
-  }
-
-  const onChangeEmail = (e) => { 
-    setEmail(e.target.value);
-  }
   
-console.log(name, email)
   return (
     <section className=' py-12 lg:section' id='contact'>
       <div className='container mx-auto'>
@@ -91,27 +104,41 @@ console.log(name, email)
             onSubmit={sendEmail}
             variants={fadeIn('left', 0.3)}
             initial='hidden'
-              whileInView={'show'}
+            whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
             className='flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start'
           >
+
+            
             <input
               className='placeholder:bg-transparent bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all '
               type="text"
               placeholder='Your name'
               name='from_name'
-              value={name}
-              onChange={onChangeName}
+              value={formik.values.name}
+              onChange={formik.handleChange}
             />
+            <span className={`block text-xs pb-1 text-teal-500 ${formik.errors.from_name ? 'text-white-500' : ''}`} >
+              {formik.touched.from_name && formik.errors.from_name ? formik.errors.from_name : <div className='hidden'></div>}
+            </span>
+           
             
             <input
+              
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all '
               type="text"
               placeholder='Your email'
               name='from_email'
-              value={email}
-              onChange={onChangeEmail}
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
+
+            <span className={`block text-xs pb-1 text-teal-500 ${formik.errors.from_email ? 'text-white-500' : ''}`} >
+              {formik.touched.from_email && formik.errors.from_email ? formik.errors.from_email : <div className='hidden'></div>}
+            </span>
+            
+
             <textarea
               className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all  resize-none mb-12'
               placeholder='Your message'
