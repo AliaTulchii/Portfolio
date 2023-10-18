@@ -120,7 +120,7 @@ const Work = () => {
             initial='hidden'
               whileInView={'show'}
               viewport={{once: false, amount: 0.3}}
-            className='flex-1 flex flex-col gap-y-10 lg:gap-y-[74px]'>
+            className='flex-1 flex flex-col gap-y-10 lg:gap-y-24 lg:mt-3'>
 
           <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
               <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>
