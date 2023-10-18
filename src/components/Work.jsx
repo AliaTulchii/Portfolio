@@ -19,8 +19,7 @@ const Work = () => {
             className='flex-1 flex flex-col gap-y-12  mb-10 lg:mb-0 '>
             <div>
               <h2 className='h2 leading-tight text-accent'>My Latest <br /> Work</h2>
-              <p className='max-w-sm mb-16'>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Cupiditate nobis, quas laudantium ipsam reiciendis ut.</p>
+              <p className='max-w-sm mb-16'>Here are some of my works, that you can view by clicking on them, and by pressing on the button "View all projects" you will have the opportunity to see more of my projects.</p>
               
                 <a href='https://github.com/AliaTulchii?tab=repositories'
                 target='blank' className="group cursor-none relative cursor-default w-[150px] h-[50px] bg-[linear-gradient(144deg,_#fff,_#5b42f3_50%,_#00ddeb)] text-white whitespace-nowrap flex flex-wrap rounded-full overflow-hidden before:content-['View_all_projects'] before:pointer-events-none before:absolute before:z-[1] before:top-[50%] before:left-[50%] before:translate-y-[-50%] before:translate-x-[-50%] before:duration-[.4s] hover:before:text-teal-200 cursor-pointer  ">
@@ -100,9 +99,6 @@ const Work = () => {
           </a>
 
 
-              {/* <a href='https://github.com/AliaTulchii?tab=repositories'
-                target='blank'
-                className='btn py-2 px-6 text-sm '>View all projects</a> */}
             </div>
 
             <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl '>
@@ -124,7 +120,7 @@ const Work = () => {
             initial='hidden'
               whileInView={'show'}
               viewport={{once: false, amount: 0.3}}
-            className='flex-1 flex flex-col gap-y-10 lg:gap-y-14'>
+            className='flex-1 flex flex-col gap-y-10 lg:gap-y-[74px]'>
 
           <div className='group relative overflow-hidden border-2 border-white/50 rounded-xl'>
               <div className='group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300'></div>

@@ -39,7 +39,7 @@ const About = () => {
               is becoming dependent on it. Technologies and artificial intelligence are being improved
               and contribute to facilitating our work and life as a whole.I want to be as close as possible
               to technology, to be part of it and part of something big that will radically change our future.
-              I am a detail-oriented person who is always ready for challenging tasks. I am looking for
+              I am a detail-oriented person who is always ready for challenging tasks. The main technology stack I've worked with is HTML, CSS, JS, REACT, REDUX, Tailwind, Sass, Styled Component. I am looking for
               a promising and interesting job with the opportunity for professional and personal growth.
             </p>
             <div className='flex'> 
@@ -50,7 +50,8 @@ const About = () => {
                     <CountUp start={0} end={13} duration={3} /> : null}
               </div>
               <div className='font-primary text-sm tracking-[2px]'>
-                Month of <br />
+                  Month of <br />
+                  Non-commercial <br/>
                 Experience
               </div>
               </div>
